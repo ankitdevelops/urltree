@@ -32,11 +32,11 @@ psycopg2==2.8.6
 
 pytz==2021.1
 
-sqlparse==0.4.1; 
+sqlparse==0.4.1; python_version >= '3.5'
 
 whitenoise==5.2.0
 
-python-3.7.9
+
 
 
 
