@@ -1,2 +1,2 @@
 # urltree
-### This is a kindof link tree clone in django
+### This is a kind of link tree clone in django
