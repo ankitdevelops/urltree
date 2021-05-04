@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
+body {
+   
+    animation: breath 20s ease-in-out infinite;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    background-color:hsl(210, 36%, 96%);
+}
+/* nav */
+
+nav {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);;
+
+}
+
+.dashboard-tab,
+.Profile-tab{
+    width: 50%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.main img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main-container {
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+}
+
+
+.link-box {
+    border: 2px solid #fff;
+    padding: 15px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;  
+    position: relative;
+}
+.link-box:hover {
+    color: #000;
+    background-color: #fff;
+}
+@keyframes breath {
+    0%   { background-size: 100% 100vh; }
+    50% { background-size: 105% 105vh; }
+    100% { background-size: 100% 100vh; }
+}
+.link-container {
+    flex-direction: row;
+}
+.info{
+    width: 60%;
+}
+.btns{
+    width: 40%;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 440px){
+    .link-container {
+        flex-direction: column;
+    }
+
+    .delete-btn{
+        margin-left: 30px;
+        
+    }
+
+    .info{
+        width: 100%;
+    }
+    .btns{
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
