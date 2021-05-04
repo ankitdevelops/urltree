@@ -11,8 +11,8 @@ def register(request):
         
         if forms.is_valid():
             username = forms.cleaned_data.get('username')
-            first_name = form.cleaned_data.get('first_name')
-            last_name = form.cleaned_data.get('last_name')
+            first_name = forms.cleaned_data.get('first_name')
+            last_name = forms.cleaned_data.get('last_name')
             email = forms.cleaned_data.get('email')
             password = forms.cleaned_data.get('forms')
             if User.objects.filter(email=email).exists():
