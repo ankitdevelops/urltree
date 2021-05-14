@@ -13,6 +13,22 @@
     <title>Url Tree</title>
   </head>
   <body class="text-dark">
+    <nav class="">
+      <div class="container-fluid">
+       <div class="flex-container d-flex justify-content-around text-capitalize">
+           <div class="dashboard-tab p-3 ">
+               <a href="{%url 'dashboard'%}" class="nav-links text-decoration-none">
+                   <h5><strong>dashboard</strong></h5>
+               </a>
+           </div>
+           <div class="Profile-tab p-3">
+              <a href="{%url 'profile'%}" class="text-decoration-none">
+                  <h5><strong>Profile</strong></h5>
+              </a>
+          </div>
+       </div>
+      </div>
+  </nav>
     <div class="container">
         <div class="row d-flex align-items-center " style="height: 100vh;">
             <div class="col-md-5 mx-auto">

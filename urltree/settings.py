@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-4#%my)ef#((@iq*#4qtljxo=evbe6diy2955*3f8#5sq@o!^w*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['urltree.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -94,6 +94,12 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
