@@ -12,3 +12,4 @@ class Link(models.Model):
     title = models.CharField(max_length=200, blank=False)
     link = models.URLField(blank=False)
 
+
