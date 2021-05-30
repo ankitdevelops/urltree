@@ -88,3 +88,9 @@ nav {
         justify-content: flex-start;
     }
 }
+
+@media screen and (max-width:770px) {
+    .moblie-view{
+        display: none;
+    }
+}
