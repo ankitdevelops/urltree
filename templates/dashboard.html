@@ -29,71 +29,68 @@
          </div>
         </div>
     </nav>
-        
-    <!-- <div class="flex-container mt-5 container mx-auto d-flex justify-content-between">
-        <div class="link-add-btn mx-auto" style="width: 40%;">
-            <div class="d-grid gap-2">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-link">
-                    Add Link
-                </button>
-                
-            </div>
-        </div>
-        <div class="bg-add-btn mx-auto" style="width: 40%;">
-            <div class="d-grid gap-2">
-                <label for="formGroupExampleInput " class="form-label text-dark">Your Link</label>
-                <input type="text" class="form-control my-link" placeholder="" value="Your Link" id="my-link" >
-              </div>
-              
-        </div>
-    </div> -->
     
-    <div class="row container mt-5 mx-auto">
+ <div class="container">
+    <div class="row  mt-5 mx-auto">
         <div class="col-md-6">
             <div class="d-grid gap-2 mb-2">
-                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#add-link">
+                <button type="button" class="btn btn-info " data-bs-toggle="modal" data-bs-target="#add-link">
                     Add Link
                 </button>
                 
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="d-grid gap-2">
-                <label for="formGroupExampleInput " class="form-label text-dark text-center badge bg-warning text-dark">Your Link</label>
-                <input type="text" class="form-control my-link" placeholder="" value="Your Link" id="my-link" >
-              </div>
-        </div>
-    </div>
 
-    <div class="row text-dark mt-5 container mx-auto">
-        <div class="col-md-8">
-           
-            {%for link in all_links%}
-            <div class="link-container card p-3 d-flex justify-content-between mt-2">
-                <div class="info">
-                    <h6><strong>{{link.title}}</strong></h6>
-                    <h6>{{link.link | slice:":30" | safe}}...</h6>
-                </div>
-                <div class="btns d-flex " >
-                    <div class="edit-btn">
-                        <a href="{%url 'link_edit' link.id%}"  class="btn btn-primary" ">
-                            Edit
-                        </a>
+
+            <div class="d-grid gap-2">
+                <div class="input d-flex justify-content-between">
+                    <div class="input-box" style="width: 80%;">
+                        <input type="text" class="form-control my-link" placeholder="" value="Your Link" id="my-link" >
                     </div>
-                    <div class="delete-btn">
-                        <a href="{%url 'delete_link' link.id%}" type="button" class="btn btn-primary" >
-                           Delete
-                        </a>
-                    </div>
+                    <button type="button" class="btn btn-info " onclick="copyUrl()" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to Copy">
+                      Copy  
+                    </button>
                 </div>
             </div>
-            {%endfor%}
 
+            <div class="row text-dark mt-5 mx-auto">
+                <div class="col-md-12">
+                
+                    {%for link in all_links%}
+                    <div class="link-container  card p-3 d-flex justify-content-between mt-2" style="width: 100%;">
+                        <div class="info">
+                            <h6><strong>{{link.title}}</strong></h6>
+                            <h6>{{link.link | slice:":30" | safe}}...</h6>
+                        </div>
+                        <div class="btns d-flex " >
+                            <div class="edit-btn">
+                                <a href="{%url 'link_edit' link.id%}"  class="btn btn-info" ">
+                                    Edit
+                                </a>
+                            </div>
+                            <div class="delete-btn">
+                                <a href="{%url 'delete_link' link.id%}" type="button" class="btn btn-info" >
+                                Delete
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
             
-
+            </div>
         </div>
+
+        <div class="col-md-6 mx-auto text-center">
+            <div class="embed-responsive embed-responsive-9by16 mx-auto">
+                <iframe class="embed-responsive-item" src=""  height="620" width="360" id="frame" style="border-radius: 8px;"></iframe>
+              </div>
+        </div>
+        
     </div>
 
+    
+
+ </div>
 
 <!-- Add Link Modal -->
     <div class="modal fade " id="add-link" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,16 +109,14 @@
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-info">Add</button>
             </form>
             </div>
         </div>
         </div>
     </div>
 
-<!-- Delete Modal -->
 
-   
     
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -135,9 +130,20 @@
     -->
     <script>
         // window.location.href
-        const url = `${window.location.href}{{request.user}}`
+        const url = `${window.location.href}{{request.user}}/`
         // console.log(url);'{{request.user}}'
         document.getElementById("my-link").value =url;
+        document.getElementById("frame").src =url;
+
+        
+    </script>
+    <script>
+        function copyUrl(){
+            var copyLink = document.getElementById("my-link");
+            copyLink.select();
+            copyLink.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
     </script>
   </body>
 </html>

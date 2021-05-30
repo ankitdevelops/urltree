@@ -18,19 +18,17 @@
             <div class="col-md-5 mx-auto">
                     <div class="card rounded-cirlce cards" style="border: 5px solid rgb(68, 64, 64);">
                         <div class="top_box p-4 ">
-                            <h1 class="display-4 text-center">Chage Image</h1>
+                            <h1 class="display-4 text-center">Edit</h1>
                         </div>
                         <div class="card-body">
                             <form action="" method="POST">
-                                {%csrf_token%}
-                                {{image_form | crispy}}
+                                {% csrf_token %}
+                                {{ bg_form | crispy}}
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-primary mt-2" >
-                                        Save
-                                    </button>
-                                  </div>
-                                
-                            </form>
+                                  <button type="submit" class="btn btn-primary mt-1" type="button">Save</button>
+                                </div>
+                               
+                            </form>`
                         </div>
                     </div>
             </div>

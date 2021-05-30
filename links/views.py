@@ -54,9 +54,10 @@ def delete_link(request, id):
 def user_link(request,username):
    user = User.objects.get(username= username)
    user_link = Link.objects.filter(user = user)
-   print(user_link)
+  
    data = {
        'user_link':user_link,
        'user':user,
    }
    return render(request, 'base.html', data)
+

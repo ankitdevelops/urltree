@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, fields
-from . models import Link, BackgroundImage
+from . models import Link
 
 
 class LinkForm(ModelForm):
@@ -8,7 +8,3 @@ class LinkForm(ModelForm):
         model = Link
         fields = ['title', 'link']
 
-class ImageForm(ModelForm):
-    class Meta:
-        model = BackgroundImage
-        fields = ['image_url',]

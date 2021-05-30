@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap');
 body {
-   
+    background-attachment: fixed;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 100vh;
+    object-fit: cover;
     animation: breath 20s ease-in-out infinite;
     font-family: 'Lato', sans-serif;
     color: #fff;
     background-color:hsl(210, 36%, 96%);
+    
 }
-/* nav */
+
 
 nav {
     background-color: #fff;
@@ -21,25 +27,6 @@ nav {
     letter-spacing: 2px;
 }
 
-.main {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    
-}
-.main img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-
-}
-
-.main-container {
-    position: absolute;
-    
-    top: 0;
-    left: 0;
-}
 
 
 .link-box {
